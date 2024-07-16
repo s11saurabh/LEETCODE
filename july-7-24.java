@@ -271,3 +271,23 @@ class Solution {
     }
 }
 }
+
+
+    StringBuilder ans = new StringBuilder();
+        int target = 0;
+        boolean startAdding = false;
+        char[] charArray = s.toCharArray();
+        
+        for (char c : charArray) {
+            if (startAdding) {
+                ans.append(c);
+            }
+            if (c == ch) {
+                target++;
+                if (target == count) {
+                    startAdding = true;
+                }
+            }
+        }
+        
+        return ans.toString();
